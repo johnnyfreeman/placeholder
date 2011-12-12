@@ -13,29 +13,29 @@
     placeHolder.prototype = {
 
         // Set the default options
-		// ------------------------
-		// These can be overwritten by passing an object
-		// literal with the options, like so:
-		// 
-		//     $('my_field').placeHolder({
-		//         onRestore: function()
-		//         {
-		//             // do something when placeholder is restored
-		//         },
-		//         className: 'my-placeholder'
-		//     });
-	    options: {
-	        className: 'placeholder',
-	        freezeEvents: false,
-	        onRestore: function()
-	        {
-	        	// console.log('onRestore fired!');
-	        },
-	        onClear: function()
-	        {
-	        	// console.log('onClear fired!');
-	        }
+	// ------------------------
+	// These can be overwritten by passing an object
+	// literal with the options, like so:
+	// 
+	//     $('my_field').placeHolder({
+	//         onRestore: function()
+	//         {
+	//             // do something when placeholder is restored
+	//         },
+	//         className: 'my-placeholder'
+	//     });
+	options: {
+	    className: 'placeholder',
+	    freezeEvents: false,
+	    onRestore: function()
+	    {
+	    	// console.log('onRestore fired!');
 	    },
+	    onClear: function()
+	    {
+	        // console.log('onClear fired!');
+	    }
+	},
 
         // the field is stored here and can 
         // be accessed thusly: this.field
