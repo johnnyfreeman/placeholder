@@ -1,4 +1,12 @@
-// placeholder class rewritten to use Mootools' Class object
+/**
+ * Mootools Placeholder Plugin 1.0
+ *
+ * http://johnnyfreeman.github.com/placeholder/
+ * Copyright 2011, Johnny Freeman
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
 var placeHolder = new Class({
 
 	// Options and Events are classes provided by MooTools
@@ -40,7 +48,7 @@ var placeHolder = new Class({
     // Class constructor gets run upon instantiation
     initialize: function(field, options)
     {
-    	this.init(field, options);
+    	return this.init(field, options);
     },
 
     // this lives outside the constructor so that it can 
@@ -71,6 +79,8 @@ var placeHolder = new Class({
         this.options.freezeEvents = true;
         this.restore();
         this.options.freezeEvents = false;
+
+        return this;
     },
     
     restore: function(event)
@@ -95,6 +105,8 @@ var placeHolder = new Class({
             	this.fireEvent('restore');
             };
         };
+
+        return this;
     },
     
     clear: function(event)
@@ -120,6 +132,8 @@ var placeHolder = new Class({
 	        	this.fireEvent('clear');
 	        };
         };
+
+        return this;
     }
 });
 

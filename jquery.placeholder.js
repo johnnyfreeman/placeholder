@@ -1,12 +1,18 @@
-// anonymous self invoking function prevents $ from conflicting with another framework.
-// the semi-colon before function invocation is a safety net against concatenated 
-// scripts and/or other plugins which may not be closed properly.
-;(function($, window, document, undefined) {
+/**
+ * jQuery Placeholder Plugin 1.0
+ *
+ * http://johnnyfreeman.github.com/placeholder/
+ * Copyright 2011, Johnny Freeman
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+;(function($) {
 
     // placeHolder constructor
     var placeHolder = function(field, options)
     {
-        this.init();
+        return this.init();
     };
 
     // plugin logic
@@ -80,6 +86,8 @@
             this.options.freezeEvents = true;
             this.restore();
             this.options.freezeEvents = false;
+
+            return this;
         },
         
         restore: function(event)
@@ -104,6 +112,8 @@
                     this.field.trigger('restore.placeHolder');
                 };
             };
+
+            return this;
         },
         
         clear: function(event)
@@ -129,6 +139,8 @@
                     this.field.trigger('clear.placeHolder');
                 };
             };
+
+            return this;
         }
     }
 
@@ -142,4 +154,4 @@
         });
     };
 
-})(jQuery, window);
+})(jQuery);
