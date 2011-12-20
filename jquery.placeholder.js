@@ -12,7 +12,7 @@
     // placeHolder constructor
     var placeHolder = function(field, options)
     {
-        return this.init();
+        return this.init(field, options);
     };
 
     // plugin logic
@@ -54,7 +54,7 @@
         // this lives outside the constructor so that it can 
         // be overwritten in a class extending this one and so that 
         // the jquery and mootools versions shared the same api
-        init: function()
+        init: function(field, options)
         {
             // save the element to the field 
             // property for future referance
