@@ -55,9 +55,9 @@
             // we don't want the onRestore event to be fired a bunch of times on
             // page load so we'll freeze all events until the restore method 
             // has done it's thing
-            this.options.freezeEvents = true;
+            this.freezeEvents = true;
             this.restore();
-            this.options.freezeEvents = false;
+            this.freezeEvents = false;
 
             return this;
         },
@@ -79,7 +79,7 @@
 
                 // fire the onRestore event so long
                 // as events have not been frozen
-                if (!this.options.freezeEvents)
+                if (!this.freezeEvents)
                 {
                     this.fireEvent('restore');
                 };
@@ -106,7 +106,7 @@
 
                 // fire the onClear event so long
                 // as events have not been frozen
-                if (!this.options.freezeEvents)
+                if (!this.freezeEvents)
                 {
                     this.fireEvent('clear');
                 };
