@@ -13,7 +13,7 @@
     {
         // save the element to the field 
         // property for future referance
-        this.field = $(field);
+        this.field = field;
 
         // $.extend is a method provided by jQuery that
         // merges the options passed in with the defaults
@@ -120,7 +120,7 @@
     $.fn.placeHolder = function(options) {
         return this.each(function() {
             if (!$.data(this, 'placeHolder')) {
-                $.data(this, 'placeHolder', new placeHolder(this, options));
+                $.data(this, 'placeHolder', new placeHolder($(this), options));
             }
         });
     };
