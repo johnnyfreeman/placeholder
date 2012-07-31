@@ -129,7 +129,11 @@
 
     Element.implement({
         placeHolder: function(options){
-            return new placeHolder(this, options);
+            if (this.retrieve('placeHolder') === null)
+            {
+                this.store('placeHolder', new placeHolder(this, options));
+            }
+            return this;
         }
     });
 

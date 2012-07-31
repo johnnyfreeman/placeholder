@@ -116,7 +116,9 @@
     // create a jquery plugin to instantiate the placeHolder object
     $.fn.placeHolder = function(options) {
         return this.each(function() {
-            return new placeHolder(this, options);
+            if (!$.data(this, 'placeHolder')) {
+                $.data(this, 'placeHolder', new placeHolder(this, options));
+            }
         });
     };
 
