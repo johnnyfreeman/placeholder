@@ -24,18 +24,18 @@
         // if later we want to unbind an event, we only unbind
         // the events bound by this plugin
         this.field.bind({
-            'blur.placeHolder': this.restore,
-            'focus.placeHolder': this.clear,
+            'blur.placeHolder': $.proxy(this.restore, this),
+            'focus.placeHolder': $.proxy(this.clear, this),
 
             // this step is done by implimenting the Events class in Mootools
             // since jQuery doesn't offer such functionality, we use jQuery's
             // bind method for adding custom events
-            'restore.placeHolder': this.options.onRestore,
-            'clear.placeHolder': this.options.onClear
+            'restore.placeHolder': $.proxy(this.options.onRestore, this),
+            'clear.placeHolder': $.proxy(this.options.onClear, this)
         });
 
         // clear placeholder upon submit
-        this.field.closest('form').on('submit', this.clear);
+        this.field.closest('form').on('submit', $.proxy(this.clear, this));
 
         // trigger the restore method immediately so that the value 
         // and placeholder classname will be set on page load.
