@@ -110,6 +110,9 @@
         return this;
     };
 
+    // expose the placeHolder object to the global scope
+    window.placeHolder = placeHolder;
+
     // create a jquery plugin to instantiate the placeHolder object
     $.fn.placeHolder = function(options) {
         return this.each(function() {

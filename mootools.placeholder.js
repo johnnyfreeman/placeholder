@@ -116,6 +116,9 @@
         }
     });
 
+    // expose the placeHolder object to the global scope
+    window.placeHolder = placeHolder;
+
     Elements.implement({
         placeHolder: function(options){
             return this.each(function(element) {
