@@ -34,6 +34,9 @@
             'clear.placeHolder': this.options.onClear
         });
 
+        // clear placeholder upon submit
+        this.field.closest('form').on('submit', this.clear);
+
         // trigger the restore method immediately so that the value 
         // and placeholder classname will be set on page load.
         // we don't want the onRestore event to be fired a bunch of times on

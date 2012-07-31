@@ -50,6 +50,9 @@
                 focus: this.clear.bind(this)
             });
 
+            // clear placeholder upon submit
+            this.field.getParents('form').pick().addEvent('submit', this.clear.bind(this));
+
             // trigger the restore method immediately so that the value 
             // and placeholder classname will be set on page load.
             // we don't want the onRestore event to be fired a bunch of times on
