@@ -122,15 +122,14 @@
     Elements.implement({
         placeHolder: function(options){
             return this.each(function(element) {
-                return new placeHolder(element, options);
+                return element.placeHolder(options);
             });
         }
     });
 
     Element.implement({
         placeHolder: function(options){
-            if (this.retrieve('placeHolder') === null)
-            {
+            if (this.retrieve('placeHolder') === null) {
                 this.store('placeHolder', new placeHolder(this, options));
             }
             return this;
